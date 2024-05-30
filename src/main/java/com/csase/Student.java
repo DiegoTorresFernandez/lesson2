@@ -7,13 +7,13 @@ import java.util.Scanner;
  */
 public class Student {
 
-    private StudyPlanner planner;       // study planner
-    private Scanner scanner;            // scanner for user input
+    private final StudyPlanner planner;       // study planner
+    private final Scanner scanner;            // scanner for user input
 
     /*
      * Sets study planner and scanner
      */
-    public Student {
+    public Student(){
         planner = new StudyPlanner();
         scanner = new Scanner(System.in);
     }
@@ -39,14 +39,11 @@ public class Student {
      * Runs the student's choice
      */
     public void runChoice(int option) {
-        if (option == 1) {
-            addAssignment();
-        } else if (option == 2) {
-            System.out.println(planner.listAssignments());
-        } else if (option == 3) {
-            System.out.println("Goodbye!");
-        } else {
-            System.out.println("Invalid option!");
+        switch (option) {
+            case 1 -> addAssignment();
+            case 2 -> System.out.println(planner.listAssignments());
+            case 3 -> System.out.println("Goodbye!");
+            default -> System.out.println("Invalid option!");
         }
     }
 

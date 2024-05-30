@@ -9,14 +9,14 @@ import java.util.ArrayList;
  */
 public class StudyPlanner {
 
-    private ArrayList<Assignment> assignments;      // list of assignments
-    private String[] options;                       // list of options
+    private final ArrayList<Assignment> assignments;      // list of assignments
+    private final String[] options;                       // list of options
 
     /*
      * Sets assignments and options
      */
     public StudyPlanner() {
-        assignments = new ArrayList<Assignment>();
+        assignments = new ArrayList<>();
         options = new String[]{"1. Add Assignment", "2. List Assignments", "3. Exit"};
     }
 
@@ -41,7 +41,7 @@ public class StudyPlanner {
     public String listAssignments() {
         String assignmentsString = "";
 
-        if (assignments.size() == 0) {
+        if (assignments.isEmpty()) {
             return "No assignments to list!\n";
         }
 
