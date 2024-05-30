@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class Assignment {
     
     private String name;            // name of assignment
-    private LocalDate dueDate;      // due date of assignment
+    private final LocalDate dueDate;      // due date of assignment
 
     /*
      * Sets name and due date of assignment
@@ -43,13 +43,7 @@ public class Assignment {
     /*
      * Sets due date of assignment
      */
-    public void setDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    /*
-     * Returns string representation of assignment
-     */
+    @Override
     public String toString() {
         return this.name + " (due: " + this.dueDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ")";
     }
